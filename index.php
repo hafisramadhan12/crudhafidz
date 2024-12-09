@@ -1,3 +1,12 @@
+<?php
+session_start();
+// include "library/lib_login.php";
+// if(!cek_login()){
+//  header("location:login.php");
+// }
+
+// cek_timeout();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,9 +45,13 @@
         <a href="#" class="nav-link">Contact</a>
       </li> -->
     </ul>
-
-   
+    <ul class="navbar-nav ml-auto">
+     <li class="nav-item d-none d-sm-inline-block">
+        <a href="logout.php" class="nav-link"><i class="fa fa-power-off"></i>  logout</a>
+      </li>
+  </ul>
   </nav>
+
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
@@ -57,7 +70,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block"><?= $_SESSION['nama'] ?></a>
         </div>
       </div>
 

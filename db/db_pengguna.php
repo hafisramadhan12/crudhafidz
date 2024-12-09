@@ -1,6 +1,10 @@
 <?php
 $proses=$_GET['proses'];
 include "../koneksi.php";
+session_start();
+// include "../library/lib_login.php";
+// if(!cek_login()){
+
 
 if($proses=='insert'){
    $nama=$_POST['nama'];
@@ -16,11 +20,13 @@ if($proses=='insert'){
     $level=$_POST['level'];
     $id=$_POST['id'];
  
-    mysqli_query($koneksi,"UPDATE pengguna SET nama='$nama',
-    username='$username',level='$level'WHERE id='$id'");
+    mysqli_query($koneksi,"UPDATE pengguna SET nama='$nama', username='$username',level='$level' WHERE id='$id'");
 }else if($proses=='hapus'){
    $id=$_GET['id'];
    mysqli_query($koneksi,"DELETE FROM pengguna WHERE id='$id'");
 }
 
 header("location:../index.php?halaman=pengguna");
+// }else{
+//    header("location:../login.php");
+// }

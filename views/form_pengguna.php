@@ -4,7 +4,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="db/db pengguna.php?proses=insert"method="POST">
+              <form action="db/db_pengguna.php?proses=insert"method="POST">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="nama">Nama</label>
